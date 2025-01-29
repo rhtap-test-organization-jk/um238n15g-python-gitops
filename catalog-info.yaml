@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: um238n15g-python-gitops
+  description: This is GitOps manifest for um238n15g-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: um238n15g-python
+    backstage.io/kubernetes-id: um238n15g-python 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: um238n15g-python-gitops   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:um238n15g-python
